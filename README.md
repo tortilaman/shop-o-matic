@@ -1,3 +1,66 @@
+# About
+
+This application helps you keep track of the food you buy, and automatically generates shopping lists for each store you visit. The application should be useful for everyone, but some features should be of particular interest to individuals with food allergies or brand preferences.
+
+> NOTE: To quickly build out this project, the backend has been included as part of the frontend application. This will be resolved in the future.
+
+## To-Do
+
+### Features
+
+- Add Foods
+  - [ ] Add food (such as baked beans) to your "inventory", so you can buy them later
+    - [ ] For each food, add multiple brands (or other distinctions) so that you can keep track of your preferences, or which brands are (or aren't) safe for you.
+      - [ ] Add a photo of the item, so you (or someone else) can easily find it in the store later
+      - [ ] Add the store this brand is purchased at
+      - [ ] Add whether the item is safe for you to eat
+    - [ ] Add a favourite brand of each food item
+    - [ ] Add the section of the store this is in (i.e. produce)
+- Add foods to your shopping List
+  - [ ] Add a defined food to your shopping list
+    - Unless otherwise specified, your favourite brand is used, which determines the store it's purchased at
+  - [ ] Add an undefined food to your shopping list
+    - This adds the food to your "inventory", where it can be expanded upon later.
+- Stores
+  - [ ] Show all items specific to this store
+  - [ ] Show all items without a store
+
+### Views
+
+- [ ] Store
+  - [ ] Sort list by Aisle / Section
+  - [ ] Sort list alphabetically
+  - [ ] Sort by store-specific vs. no-store items
+- [ ] Foods
+- [ ] Master Shopping List
+
+## User Stories
+
+- Add items
+  - [ ] Add a store-specific item that isn't in the database already
+  - [ ] Add a store-specific item that is already in the database
+  - [ ] Add an un-branded item that is store specific (such as apples)
+  - [ ] Add an item that isn't store specific
+- Go shopping
+  - [ ]
+
+## Phases
+
+1. Support a single household, build out features (MVP & dogfooding)
+2. Support multiple users / households
+3. Community functionality???
+
+## Questions
+
+- Does there need to be any distinction between online and B&M stores?
+
+## Future
+
+- Community contributed database of brands of food:
+  - What store they're available at?
+  - What allergies they're safe for (this could be backed up by the aggregate of individual's experiences and their overrides)
+  - Pictures of the product (useful sooner rather than later)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
