@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "cors": "^2.8.5",
-    "nodemon": "^2.0.6"
+    "cors": "^2.8.5"
   }
 }
