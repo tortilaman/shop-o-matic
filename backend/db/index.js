@@ -90,11 +90,14 @@ const productSchema = new Schema({
         trim: true,
     },
     photo: String,
-    food: Schema.Types.ObjectId,
+    food: {
+        type: Schema.Types.ObjectId,
+        ref: Food,
+    },
     defaultProduct: Boolean,
     brand: {
         type: Schema.Types.ObjectId,
-        ref: Brand
+        ref: Brand,
     },
     stores: [{
         type: Schema.Types.ObjectId,

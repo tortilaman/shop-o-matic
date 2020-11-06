@@ -3,7 +3,6 @@ import { composeWithMongoose } from 'graphql-compose-mongoose';
 import { schemaComposer } from 'graphql-compose';
 // Modules
 import { Food, Product, Brand, Store, ShoppingList } from '../db';
-import { compose } from '@reduxjs/toolkit';
 
 // CONVERT MONGOOSE MODELS TO GraphQL PIECES
 const customizationOptions = {};
@@ -47,8 +46,10 @@ schemaComposer.Mutation.addFields({
 // Get all the products for this food
 FoodTC.addRelation('products', {
     resolver: () => ProductTC.getResolver('findMany'),
-    prepareArgs: {
-        food: source => source._id
+  prepareArgs: {
+    filter: (source) => ({
+     food : source._id
+      })
     },
     projection: { _id: 1 }
 })
@@ -87,19 +88,19 @@ schemaComposer.Mutation.addFields({
 ProductTC.addRelation('food', {
     resolver: () => FoodTC.getResolver('findById'),
     prepareArgs: {
-        _id: source => source.name
+        _id: source => source.food
     },
-    projection: { name: 1 }
+    projection: { food: 1 }
 })
 
 // Product should return name of brand, not its ID
-// ProductTC.addRelation('brand', {
-//     resolver: () => BrandTC.getResolver('findById'),
-//     prepareArgs: {
-//         _id: source => source.name
-//     },
-//     projection: { name: 1 }
-// })
+ProductTC.addRelation('brand', {
+    resolver: () => BrandTC.getResolver('findById'),
+    prepareArgs: {
+        _id: source => source.brand
+    },
+    projection: { brand: 1 }
+})
 
 /**
  *  888888ba                                   dP 
