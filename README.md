@@ -10,7 +10,7 @@ This application helps you keep track of the food you buy, and automatically gen
 
 - Add Foods
   - [ ] Add food (such as baked beans) to your "inventory", so you can buy them later
-    - [ ] For each food, add multiple brands (or other distinctions) so that you can keep track of your preferences, or which brands are (or aren't) safe for you.
+    - [ ] For each food, add multiple products so that you can keep track of your preferences, or which brands are (or aren't) safe for you.
       - [ ] Add a photo of the item, so you (or someone else) can easily find it in the store later
       - [ ] Add the store this brand is purchased at
       - [ ] Add whether the item is safe for you to eat
@@ -32,15 +32,24 @@ This application helps you keep track of the food you buy, and automatically gen
   - [ ] Sort list alphabetically
   - [ ] Sort by store-specific vs. no-store items
 - [ ] Foods
+  - [ ] Sort by whether or not they're safe for you to eat: yes, no, unknown
 - [ ] Master Shopping List
 
 ## User Stories
 
-- Add items
-  - [ ] Add a store-specific item that isn't in the database already
-  - [ ] Add a store-specific item that is already in the database
-  - [ ] Add an un-branded item that is store specific (such as apples)
-  - [ ] Add an item that isn't store specific
+- Add Food to shopping list
+  - [ ] Add a new product to the shopping list
+  - [ ] Add an existing product to the shopping list
+  - [ ] Add a store-specific food to the shopping list (i.e. watermelons from Clarks)
+  - [ ] Add a generic food to the shopping list
+- Add a product
+  - [ ] **While shopping, add a product that you want to check if it's safe before buying it**
+    - Photo\*
+    - Brand\*
+    - Food\*
+    - Category
+    - Store
+      - Aisle
 - Go shopping
   - [ ]
 
@@ -60,6 +69,9 @@ This application helps you keep track of the food you buy, and automatically gen
   - What store they're available at?
   - What allergies they're safe for (this could be backed up by the aggregate of individual's experiences and their overrides)
   - Pictures of the product (useful sooner rather than later)
+- Fridge inventory
+  - Expiration dates
+  - Shelf life
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 

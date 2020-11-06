@@ -1,3 +1,5 @@
+# Shop-O-Matic Backend
+
 # Databases
 
 Food
@@ -34,7 +36,7 @@ Store
 
 - Name: string\*
 - uid (generated)
-- Location: address
+- Location: address (later)
 - Products: [array of links]
 
 MasterListArray
