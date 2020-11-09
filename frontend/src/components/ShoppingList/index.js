@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery, useMutation, gql } from "@apollo/client";
 // Components
 import SLItem from "./SLItem";
+import AddItem from "./AddItem";
 
 // CONSTANTS
 const UPDATE_LIST_ITEM = gql`
@@ -63,18 +64,39 @@ const ShoppingList = () => {
       refetch();
       // TODO: There must be a better way to do this than calling `refetch`. This is refreshing the data for everything instead of just this one item, that's not efficient at all.
     };
+
+    const changeQuantity = async (quantity) => {
+      await updateListItem({
+        variables: { id: _id, record: { quantity: quantity } },
+      });
+      refetch();
+      // TODO: Again, there must be a better way.
+    };
+
+    // Render
     return (
       <SLItem
         food={item.name}
         product={item.favorite.name}
         quantity={quantity}
         toggleCompleted={toggleCompleted}
+        changeQuantity={changeQuantity}
         completed={completed}
         key={_id}
       />
     );
   });
-  return <div>{shoppingList}</div>;
+
+  return (
+    <div className="flex flex-col flex-no-wrap">
+      <AddItem />
+      <div className="flex flex-row flex-no-wrap mt-4 ml-16 pl-1 font-medium text-xl">
+        <span className="w-auto ml-2 flex-grow">Item</span>
+        <span className="">Quantity</span>
+      </div>
+      {shoppingList}
+    </div>
+  );
 };
 
 export default ShoppingList;
