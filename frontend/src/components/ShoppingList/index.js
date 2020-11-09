@@ -60,7 +60,7 @@ const ShoppingList = () => {
       await updateListItem({
         variables: { id: _id, record: { completed: !completed } },
       });
-      // refetch();
+      refetch();
       // TODO: There must be a better way to do this than calling `refetch`. This is refreshing the data for everything instead of just this one item, that's not efficient at all.
     };
     return (
