@@ -12,7 +12,7 @@ const DataDump = () => {
         }
     }`)
 
-    console.log(`Data: ${data}`);
+    // console.log(`Data: ${data}`);
     
     if (loading) return <p>Loading...</p>
     if (error) {
